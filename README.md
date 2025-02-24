@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dominoes
 
-## Getting Started
+Create a single page application to show domino cards like the following example :
 
-First, run the development server:
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXc4mahjSKfUbywKjPu_fyyrBbUaCjdl0JGoSs7TozRMXoxRC6I8hv9W66G2Y6EMiLK_K7I-wegh-K6zQek2vhGKFxcWKfkiXIENZ6dKSySi0o_jTrE1u1ZkjGvQqX2FkNQrZHqt5TjIYHKR60J9WLRMrAc?key=UhueeHCPVEW9vh5a1FkZpQ)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Write the code in the CodeSandbox based on the template provided :
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<https://codesandbox.io/s/dominoes-student-template-92gg8y>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Show all domino cards
 
-## Learn More
+The application will display all domino cards based on the data provided.
 
-To learn more about Next.js, take a look at the following resources:
+### Show how many double numbers appear
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The application will display how many double numbers appear.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Example :
 
-## Deploy on Vercel
+[1, 2] [1, 1] [4, 1] [3, 3] [6, 1] → 2
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[5, 1] [3, 2] [2, 3] [3, 1] [5, 1] → 0
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Sort data (asc & desc)
+
+Users can sort the domino cards in ascending or descending order.
+
+Sorting rules :
+
+- Sorting domino cards based on the total number on each card
+
+- Prioritize domino cards with smaller numbers (asc) or larger numbers (desc)
+
+Example :
+
+Source : [3, 4] [1, 2] [1, 6]
+
+Asc Order : [1, 2] [1, 6] [3, 4]
+
+Desc Order : [3, 4] [1, 6] [1, 2]
+
+### Remove duplicate
+
+Users can remove domino cards with the same total number and number combination.
+
+Example : [1,2][1,2][2,1][1,3] → [1,3]
+
+### Flip the cards
+
+Example : [1,2][1,2][2,1][1,3] → [2,1][2,1][1,2][3,1]
+
+### Remove cards with certain total number
+
+Example : [1,2][2,2][2,1][1,3] → remove 4 → [1,2][2,1]
+
+### Reset data
+
+Users can reset the data to default data.
